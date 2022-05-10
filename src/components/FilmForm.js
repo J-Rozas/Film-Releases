@@ -32,6 +32,8 @@ const FilmForm = ({onFilmSubmit}) => {
   }
 
   return (
+    // When the form is submitted, the function handleFilmSubmit, adds a new film using addFilm, that lives in FilmBox,
+    // as a callback function
     <form onSubmit={handleFilmSubmit}>
       <input 
         type="text"
