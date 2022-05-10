@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import FilmList from "../components/FilmList";
+
 
 // filmBox CONTAINER that has a useState HOOK inside
 const FilmBox = () => {
@@ -30,6 +32,10 @@ const FilmBox = () => {
         url: "https://www.imdb.com/title/tt4154664/?ref_=rlm"
       }
     ]
+  )
+
+  return (
+    <FilmList films={films}></FilmList>
   )
 }
 
