@@ -49,7 +49,9 @@ const FilmBox = () => {
 
   return (
     <>
-      <FilmList films={films}></FilmList>
+      <ul>
+        <FilmList films={films}></FilmList>
+      </ul>
       <FilmForm onFilmSubmit={addFilm}></FilmForm>
     </>
   )
