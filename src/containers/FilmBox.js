@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FilmList from "../components/FilmList";
+import FilmForm from "../components/FilmForm";
 
 
 // filmBox CONTAINER that has a useState HOOK inside
@@ -34,8 +35,23 @@ const FilmBox = () => {
     ]
   )
 
+  // Create function to add a new film
+  // This function is going to be referenced from 
+  const addFilm = (newFilm) => {
+    // Set id of the new film to the current date (when the film is added)
+    newFilm.id = Date.now();
+    // Initialise variable to the current list of films plus the new film that we are going to add
+    const updatedFilms = [...films, newFilm];
+    // update films with the list of the films that includes the new film
+    setFilms(updatedFilms);
+  }
+
+
   return (
-    <FilmList films={films}></FilmList>
+    <>
+      <FilmList films={films}></FilmList>
+      <FilmForm onFilmSubmit={addFilm}></FilmForm>
+    </>
   )
 }
 
